@@ -1,0 +1,142 @@
+@sidebarBgColor: #000;
+@sidebarBgColorHover: #1f1f20;
+@menuTextColor: #d8d9da;
+@menuTextColorActive: #ffffff;
+@transitionTime: .3s;
+
+.bgColor {
+  background: @sidebarBgColor;
+}
+
+.sidebar {
+  color: @menuTextColor;
+  position: relative;
+  composes: bgColor;
+  z-index: 11;
+  font-size: 14px;
+  height: 100%;
+  box-shadow: 2px 0 8px 0 rgba(29,35,41,.05);
+  transition: width @transitionTime cubic-bezier(.645,.045,.355,1);
+  background-position: left 15% bottom 80px;
+  background-repeat: no-repeat;
+  background-size: 60% auto;
+  ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+    min-height: calc(100% - 215px);
+  }
+  li {
+    position: relative;
+  }
+  a:hover {
+    color: inherit;
+  }
+}
+
+.menuItem {
+  color: @menuTextColor;
+  text-decoration: none;
+  span {
+    padding-left: 5px;
+    flex-shrink: 0; // 宽度不足时，不被压缩
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;  /*强制span不换行*/
+    text-overflow: ellipsis;
+  }
+  .menuItemIcon {
+    font-size: 20px;
+    transform: rotate(90deg);
+  }
+  .deg270 {
+    transform: rotate(-90deg);
+  }
+  height: 50px;
+  line-height: 50px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  transition: padding @transitionTime;
+}
+
+.menuItemText {
+  transition: opacity @transitionTime cubic-bezier(.645,.045,.355,1);
+}
+
+.menuItem:hover {
+  color: @menuTextColorActive;
+}
+
+.menuItemActive {
+  color: @menuTextColorActive;
+  background: @sidebarBgColorHover;
+}
+
+.sidebar .subMenu {
+  padding: 5px 0;
+}
+
+.foldSubMenu {
+  position: absolute;
+  border-radius: 10px;
+  width: 250px;
+  left: 85px;
+  background: inherit;
+  top: 10px;
+  box-shadow: 0 0 8px 2px gray;
+  z-index: 11110;
+  margin-left: 5px;
+}
+
+.menuItemText {
+  width: 90%;
+  overflow: hidden;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  text-overflow: ellipsis;
+}
+
+.menuBgImg {
+  width: 60%;
+  margin: 20px 0 20px 15%;
+}
+
+.unfoldBtnContainer {
+  padding: 0 15px;
+  width: 100%;
+  margin-bottom: 40px;
+  img {
+    height: 25px;
+    cursor: pointer;
+  }
+  .floatLeft {
+    float: left;
+  }
+  .floatRight {
+    float: right;
+  }
+}
+
+.foldBtnContainer {
+  margin-top: 60px;
+  padding: 0;
+  img {
+    display: block;
+    margin:  10px auto 0;
+  }
+}
+
+.mr10 {
+  margin-right: 10px;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}

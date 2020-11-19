@@ -1,0 +1,68 @@
+.baffle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.main {
+  position: fixed;
+  top: calc(50% - 50px);
+  display: flex;
+  align-items: center;
+  right: 0;
+  transition: right .8s;
+  z-index: 11;
+}
+
+.cursorPointer {
+  cursor: pointer;
+}
+
+.bgWhite {
+  background: white;
+}
+
+.iconClass {
+  composes: bgWhite;
+  composes: cursorPointer;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+}
+
+.themeContent {
+  composes: bgWhite;
+  padding: 10px;
+  width: 200px;
+}
+
+.theme {
+  margin-bottom: 10px;
+  ul {
+    display: flex;
+    align-items: center;
+    margin: 10px 0 0;
+    padding: 0 0 0 5px;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  ul li {
+    list-style: none;
+    width: 50px;
+    height: 20px;
+    background: greenyellow;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+}
+
+.theme .themeActivated {
+  width: 55px;
+  height: 25px;
+}
+
+.menuPositionContent {
+  padding-left: 5px;
+}
+

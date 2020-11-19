@@ -1,0 +1,347 @@
+@sidebarBgColor: #000;
+@sidebarBgColorHover: #1f1f20;
+@menuTextColor: #d8d9da;
+@menuTextColorActive: #ffffff;
+@contentBgColor: #161719;
+@transitionTime: 0.3s;
+@headerHeight: 60px;
+@headerImgHeader: 30px;
+
+@darkContentColor: #fdfeff;
+@darkCheckboxColor: #17e2f5;
+@darkTableActiveBtnColor: #17E2F5FF;
+@darkTableHoverRowBg: #0d629e;
+@darkPaginationColor: #b4e4ff;
+@darkPrimaryBtnColor: #0D1726;
+@darkPrimaryBtnBg: #17E2F5;
+
+@industryDarkContentColor: #fdfeff;
+@industryDarkCheckboxColor: #17e2f5;
+@industryDarkTableActiveBtnColor: #17E2F5FF;
+@industryDarkTableHoverRowBg: #0d629e;
+@industryDarkPaginationColor: #b4e4ff;
+@industryDarkPrimaryBtnColor: #0D1726;
+@industryDarkPrimaryBtnBg: #17E2F5;
+
+.generateMain(
+  @contentColor;
+  @checkboxColor;
+  @tableActiveBtnColor;
+  @tableHoverRowBg;
+  @paginationColor;
+  @primaryBtnColor;
+  @primaryBtnBg
+) {
+  width: 100%;
+  height: 100%;
+  :global {
+    /* 输入框 */
+    .ant-legacy-form-item-label > label {
+      color: @contentColor;
+    }
+
+    .ant-form-item-label > label {
+      color: @contentColor;
+    }
+
+    .ant-legacy-form-item {
+      margin-bottom: 5px;
+      margin-top: 5px;
+    }
+
+    /* 时间选择 */
+    .ant-picker {
+      width: 100%;
+    }
+    /* 表格样式修改 */
+    .ant-table {
+      color: @contentColor;
+      background: transparent;
+    }
+    .ant-table .ant-table-row-indent + .ant-table-row-expand-icon {
+      color: @checkboxColor;
+      background-color: transparent;
+      border-color: @checkboxColor;
+    }
+    .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+      color: @contentColor;
+      padding: 10px;
+      a {
+        padding: 0 5px;
+        color: @tableActiveBtnColor;
+      }
+    }
+    .ant-table-thead > tr:hover.ant-table-row-selected > td, .ant-table-tbody > tr:hover.ant-table-row-selected > td {
+      background: @tableHoverRowBg;
+    }
+    .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+      background: @tableHoverRowBg;
+    }
+    .ant-table-tbody > tr.ant-table-row-selected td {
+      background: transparent;
+      border-color: @contentColor;
+    }
+    .ant-table-thead > tr > th {
+      background: inherit;
+      color: @contentColor;
+    }
+    .ant-table-placeholder {
+      background: inherit;
+    }
+    .ant-empty-normal {
+      color: @contentColor;
+    }
+
+    /* 复选框样式 */
+    .ant-checkbox-wrapper {
+      color: @checkboxColor;
+      font-size: 12px !important;
+    }
+    .ant-checkbox-inner,
+    .ant-checkbox-checked .ant-checkbox-inner {
+      background: transparent;
+      border-color: @checkboxColor;
+    }
+    .ant-checkbox-wrapper:hover .ant-checkbox-inner,
+    .ant-checkbox:hover .ant-checkbox-inner,
+    .ant-checkbox-input:focus + .ant-checkbox-inner {
+      border-color: @checkboxColor;
+    }
+    .ant-checkbox-indeterminate .ant-checkbox-inner::after {
+      background-color: @checkboxColor;
+    }
+    .ant-checkbox-indeterminate .ant-checkbox-inner {
+      background-color: transparent;
+      border-color: @checkboxColor;
+    }
+
+    /* 分页按钮 */
+    .ant-pagination-item {
+      background: transparent;
+    }
+    .ant-pagination-item a {
+      color: @paginationColor;
+    }
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link {
+      background: transparent;
+      color: @paginationColor;
+    }
+    .ant-pagination-disabled a,
+    .ant-pagination-disabled:hover a,
+    .ant-pagination-disabled:focus a,
+    .ant-pagination-disabled .ant-pagination-item-link,
+    .ant-pagination-disabled:hover .ant-pagination-item-link,
+    .ant-pagination-disabled:focus .ant-pagination-item-link {
+      color: @paginationColor;
+    }
+    .ant-pagination-jump-prev .ant-pagination-item-container .ant-pagination-item-ellipsis, .ant-pagination-jump-next .ant-pagination-item-container .ant-pagination-item-ellipsis {
+      color: @paginationColor;
+    }
+
+    /* 单选框 */
+    .ant-radio-wrapper {
+      color: @contentColor;
+    }
+    /*primary btn样式修改*/
+    .ant-btn-primary {
+      color: @primaryBtnColor;
+      background-color: @primaryBtnBg;
+      border-color: @primaryBtnBg;
+    }
+    .ant-btn-primary:hover, .ant-btn-primary:focus {
+      color: @primaryBtnColor;
+      background-color: @primaryBtnBg;
+      border-color: @primaryBtnBg;
+    }
+    /* tab */
+    .ant-tabs {
+      color: @contentColor;
+    }
+  }
+}
+
+.main {
+  .generateMain(@darkContentColor; @darkCheckboxColor; @darkTableActiveBtnColor; @darkTableHoverRowBg; @darkPaginationColor; @darkPrimaryBtnColor; @darkPrimaryBtnBg);
+}
+
+.mainIndustryDark {
+  .generateMain(@industryDarkContentColor; @industryDarkCheckboxColor; @industryDarkTableActiveBtnColor; @industryDarkTableHoverRowBg; @industryDarkPaginationColor; @industryDarkPrimaryBtnColor; @industryDarkPrimaryBtnBg);
+}
+
+.mainLight {
+  width: 100%;
+  height: 100%;
+  :global {
+    /* 时间选择 */
+    .ant-picker {
+      width: 100%;
+    }
+    .ant-table-bordered .ant-table-thead > tr > th, .ant-table-bordered .ant-table-tbody > tr > td {
+      border-color: #000;
+    }
+    .ant-table-thead > tr:first-child > th:first-child {
+      border-left: 1px solid #000;
+    }
+    .ant-table-thead > tr > th {
+      border-top: 1px solid #e8e8e8;
+    }
+    .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+      padding: 10px;
+      a {
+        padding: 0 5px;
+      }
+    }
+    .ant-table-bordered .ant-table-header > table, .ant-table-bordered .ant-table-body > table, .ant-table-bordered .ant-table-fixed-left table, .ant-table-bordered .ant-table-fixed-right table {
+      border-color: #000;
+    }
+    .ant-table-bordered.ant-table-empty .ant-table-placeholder {
+      border-color: black;
+      border-right: 1px solid black;
+      border-left: 1px solid black;
+    }
+  }
+}
+
+.flexBC {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bgColor {
+  background: @sidebarBgColor;
+}
+
+.contentBody {
+  //width: calc(100% - 200px);
+  width: 100%;
+  min-height: 100%;
+  overflow-y: auto;
+}
+
+.header {
+  height: @headerHeight;
+  font-size: 20px;
+  text-align: center;
+  background-size: 100% 100%;
+  position: relative;
+}
+
+.headerTitle {
+  line-height: @headerHeight - 10px;
+  font-size: 22px;
+  display: inline-block;
+}
+
+.headerTool {
+  position: absolute;
+  top: 0;
+  width: 25%;
+  padding-left: 10px;
+  height: @headerHeight;
+  .flexBC;
+}
+
+.headerLeftTool {
+  .headerTool;
+  left: 0;
+  img {
+    height: @headerImgHeader;
+  }
+}
+
+.headerLeftText {
+  font-size: 14px;
+  line-height: @headerImgHeader;
+  .num {
+    color: #fa6400;
+    font-size: 32px;
+    padding: 0 5px;
+  }
+}
+
+.headerRightTool {
+  .headerTool;
+  right: 0;
+  padding-right: 10px;
+  a {
+    padding-left: 10px;
+  }
+  .headerRightText {
+    display: flex;
+    .time {
+      font-size: 35px;
+    }
+    .date {
+      padding-left: 5px;
+      font-size: 14px;
+      text-align: left;
+      line-height: 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .headerIcon {
+    font-size: 25px;
+  }
+}
+
+.menuFoldIcon {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.content {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px 30px;
+  // height: calc(100% - 90px);
+  height: 100%;
+}
+
+.headUser {
+  cursor: pointer;
+  .flexBC;
+  font-size: 13px;
+}
+
+.headUser:hover {
+  color: #1aaaf6;
+}
+
+.body {
+  display: flex;
+  width: 100%;
+  height: calc(100% - @headerHeight);
+  background-size: 100% 100%;
+  padding-top: 10px;
+}
+
+.alarmItem {
+  display: flex;
+  margin-bottom: 20px;
+  span {
+    width: 42px;
+    flex-shrink: 0;
+  }
+  div {
+    width: 200px;
+  }
+  .time {
+    font-size: 12px;
+    color: rgba(0,0,0,0.5);
+  }
+  .grey {
+    color: darkgrey;
+  }
+  .green {
+    color: green;
+  }
+}
+
+.carouselMessage {
+  position: absolute;
+  top: 40px;
+}

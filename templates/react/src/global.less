@@ -1,0 +1,65 @@
+
+html, body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+:global {
+  #root {
+    width: 100%;
+    height: 100%;
+  }
+
+  .font12 {
+    font-size: 11px;
+  }
+
+  .main {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+*::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  background: #535353;
+}
+
+*::-webkit-scrollbar-track {/*滚动条里面轨道*/
+  -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  background: #EDEDED;
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.flexColumnCenter {
+  .flexColumn;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexBetweenCenter {
+  .flexCenter;
+  justify-content: space-between;
+}
